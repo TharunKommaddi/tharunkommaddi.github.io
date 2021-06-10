@@ -124,7 +124,8 @@ a.button {
 
 a.button:active {
     position: relative;
-    top: 1px;   
+    top: 1px;
+	
 }
 
 a.button:hover {
@@ -818,6 +819,7 @@ h1.entry-title {
 .grid-item a.item-link:hover .portfolio-text-holder,
 .grid-item.portfolio-content-loading a.item-link .portfolio-text-holder {
     transform: translateX(0);
+	border-radius: 10px;
 }
 
 #portfolio-grid.portfoio-items-mask .grid-item {
