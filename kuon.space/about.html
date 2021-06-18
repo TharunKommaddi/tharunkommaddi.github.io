@@ -114,107 +114,116 @@
               </div>
             </div>
 			<!-- Styles -->
+			
+			
+<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/plugins/wordCloud.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/kelly.js"></script>
+<div id="chartdiv"></div>
+
+
+
 <style>
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
 #chartdiv {
   width: 100%;
   height: 600px;
 }
+
 </style>
 
-<!-- Resources -->
-<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
-<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
-<script src="https://cdn.amcharts.com/lib/4/plugins/wordCloud.js"></script>
-<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
-
-<!-- Chart code -->
 <script>
-am4core.ready(function() {
+
+/**
+ * ---------------------------------------
+ * This demo was created using amCharts 4.
+ * 
+ * For more information visit:
+ * https://www.amcharts.com/
+ * 
+ * Documentation is available at:
+ * https://www.amcharts.com/docs/v4/
+ * ---------------------------------------
+ */
 
 // Themes begin
-am4core.useTheme(am4themes_animated);
+am4core.useTheme(am4themes_kelly);
 // Themes end
 
 var chart = am4core.create("chartdiv", am4plugins_wordCloud.WordCloud);
 chart.fontFamily = "Courier New";
+"hideCredits":true;
 var series = chart.series.push(new am4plugins_wordCloud.WordCloudSeries());
 series.randomness = 0.1;
-series.rotationThreshold = 0.5;
+series.rotationThreshold = 0.9;
 
 series.data = [ {
-    "tag": "Tensorflow",
+    "tag": "TensorFlow",
     "count": "1765836"
 }, {
-    "tag": "Pytorch",
+    "tag": "PyTorch",
     "count": "1517355"
 }, {
-    "tag": "c#",
+    "tag": "Plotly",
     "count": "1287629"
 }, {
-    "tag": "Keras",
+    "tag": "SkLearn",
     "count": "1263946"
 }, {
-    "tag": "SkLearn",
+    "tag": "Keras",
     "count": "1174721"
 }, {
-    "tag": "python",
+    "tag": "Docker",
     "count": "1116769"
 }, {
-    "tag": "jquery",
+    "tag": "Dash",
     "count": "944983"
 }, {
-    "tag": "html",
+    "tag": "Flask",
     "count": "805679"
 }, {
-    "tag": "c++",
+    "tag": "Numpy",
     "count": "606051"
 }, {
-    "tag": "ios",
+    "tag": "Pandas",
     "count": "591410"
 }, {
     "tag": "css",
     "count": "574684"
 }, {
-    "tag": "mysql",
+    "tag": "MySQL",
     "count": "550916"
 }, {
-    "tag": "sql",
+    "tag": "SQL",
     "count": "479892"
 }, {
-    "tag": "asp.net",
+    "tag": "Plotly",
     "count": "343092"
-}, {
-    "tag": "ruby-on-rails",
-    "count": "303311"
-}, {
-    "tag": "c",
-    "count": "296963"
-}, {
+}, { 
     "tag": "arrays",
     "count": "288445"
 }, {
-    "tag": "objective-c",
-    "count": "286823"
-}, {
-    "tag": ".net",
+    "tag": "Optuna",
     "count": "280079"
 }, {
-    "tag": "r",
+    "tag": "CSV",
     "count": "277144"
 }, {
-    "tag": "node.js",
+    "tag": "Excel",
     "count": "263451"
 }, {
-    "tag": "angularjs",
-    "count": "257159"
-}, {
-    "tag": "json",
+    "tag": "JSON",
     "count": "255661"
 }, {
     "tag": "sql-server",
     "count": "253824"
 }, {
-    "tag": "swift",
+    "tag": "HTML",
     "count": "222387"
 }, {
     "tag": "iphone",
@@ -223,25 +232,22 @@ series.data = [ {
     "tag": "regex",
     "count": "203121"
 }, {
-    "tag": "ruby",
+    "tag": "CSS",
     "count": "202547"
 }, {
-    "tag": "ajax",
-    "count": "196727"
-}, {
-    "tag": "django",
+    "tag": "Django",
     "count": "191174"
 }, {
     "tag": "excel",
     "count": "188787"
 }, {
-    "tag": "xml",
+    "tag": "XML",
     "count": "180742"
 }, {
-    "tag": "asp.net-mvc",
+    "tag": "PyCharm",
     "count": "178291"
 }, {
-    "tag": "linux",
+    "tag": "DevOps",
     "count": "173278"
 }, {
     "tag": "angular",
@@ -250,50 +256,8 @@ series.data = [ {
     "tag": "database",
     "count": "153581"
 }, {
-    "tag": "wpf",
-    "count": "147538"
-}, {
-    "tag": "spring",
-    "count": "147456"
-}, {
-    "tag": "wordpress",
-    "count": "145801"
-}, /*{
-    "tag": "python-3.x",
-    "count": "145685"
-},*/ {
-    "tag": "vba",
-    "count": "139940"
-},/* {
-    "tag": "string",
-    "count": "136649"
-}, {
-    "tag": "xcode",
-    "count": "130591"
-}, {
-    "tag": "windows",
-    "count": "127680"
-}, {
-    "tag": "reactjs",
-    "count": "125021"
-}, {
-    "tag": "vb.net",
-    "count": "122559"
-}, {
-    "tag": "html5",
-    "count": "118810"
-}, {
-    "tag": "eclipse",
-    "count": "115802"
-}, {
-    "tag": "multithreading",
-    "count": "113719"
-}, {
-    "tag": "mongodb",
+    "tag": "MongoDB",
     "count": "110348"
-}, {
-    "tag": "laravel",
-    "count": "109340"
 }, {
     "tag": "bash",
     "count": "108797"
@@ -310,160 +274,49 @@ series.data = [ {
     "tag": "postgresql",
     "count": "96027"
 }, {
-    "tag": "twitter-bootstrap",
-    "count": "94348"
-}, {
-    "tag": "forms",
-    "count": "92995"
-}, {
-    "tag": "image",
-    "count": "92131"
-}, {
-    "tag": "macos",
-    "count": "90327"
-}, {
-    "tag": "algorithm",
-    "count": "89670"
-}, {
-    "tag": "python-2.7",
-    "count": "88762"
-}, {
     "tag": "scala",
     "count": "86971"
 }, {
     "tag": "visual-studio",
     "count": "85825"
-}, {
-    "tag": "list",
-    "count": "84392"
-}, {
-    "tag": "excel-vba",
-    "count": "83948"
-}, {
-    "tag": "winforms",
-    "count": "83600"
-}, {
-    "tag": "apache",
-    "count": "83367"
-}, {
-    "tag": "facebook",
-    "count": "83212"
-}, {
-    "tag": "matlab",
-    "count": "82452"
-}, {
-    "tag": "performance",
-    "count": "81443"
-}, {
-    "tag": "css3",
-    "count": "78250"
-}, {
-    "tag": "entity-framework",
-    "count": "78243"
-}, {
-    "tag": "hibernate",
-    "count": "76123"
-}, {
-    "tag": "typescript",
-    "count": "74867"
-}, {
-    "tag": "linq",
-    "count": "73128"
-}, {
-    "tag": "swing",
-    "count": "72333"
-}, {
-    "tag": "function",
-    "count": "72043"
-}, {
-    "tag": "amazon-web-services",
+},  {
+    "tag": "Amazon-Web-Services",
     "count": "71155"
 }, {
-    "tag": "qt",
+    "tag": "Git",
     "count": "69552"
 }, {
-    "tag": "rest",
+    "tag": "FastAPI",
     "count": "69138"
 }, {
-    "tag": "shell",
+    "tag": "MLOps",
     "count": "68854"
 }, {
-    "tag": "azure",
+    "tag": "Azure",
     "count": "67431"
 }, {
-    "tag": "firebase",
-    "count": "66411"
-}, {
-    "tag": "api",
+    "tag": "RestAPI",
     "count": "66158"
-}, {
-    "tag": "maven",
-    "count": "66113"
 }, {
     "tag": "powershell",
     "count": "65467"
 }, {
-    "tag": ".htaccess",
-    "count": "65014"
-}, {
-    "tag": "sqlite",
+    "tag": "SQLite",
     "count": "64888"
 }, {
-    "tag": "file",
-    "count": "62783"
-}, {
-    "tag": "codeigniter",
+    "tag": "Jenkins",
     "count": "62393"
-}, {
-    "tag": "unit-testing",
-    "count": "61909"
-}, {
-    "tag": "perl",
-    "count": "61752"
-}, {
-    "tag": "loops",
-    "count": "61015"
-}, {
-    "tag": "symfony",
-    "count": "60820"
-}, {
-    "tag": "selenium",
-    "count": "59855"
-}, {
-    "tag": "google-maps",
-    "count": "59616"
-}, {
-    "tag": "csv",
-    "count": "59600"
-}, {
-    "tag": "uitableview",
-    "count": "59011"
-}, {
-    "tag": "web-services",
-    "count": "58916"
-}, {
-    "tag": "cordova",
-    "count": "58195"
-}, {
-    "tag": "class",
-    "count": "58055"
-}, {
-    "tag": "numpy",
-    "count": "57132"
-}, {
-    "tag": "google-chrome",
-    "count": "56836"
-}, {
-    "tag": "ruby-on-rails-3",
+},  {
+    "tag": "Flask",
     "count": "55962"
 }, {
-    "tag": "android-studio",
+    "tag": "Seaborn",
     "count": "55801"
 }, {
-    "tag": "tsql",
+    "tag": "PostGreSQL",
     "count": "55736"
-},*/ {
-    "tag": "validation",
+}, {
+    "tag": "Kubernets",
     "count": "55531"
 } ];
 
@@ -473,6 +326,7 @@ series.dataFields.value = "count";
 series.heatRules.push({
  "target": series.labels.template,
  "property": "fill",
+ 
  "min": am4core.color("#0000CC"),
  "max": am4core.color("#CC00CC"),
  "dataField": "value"
@@ -489,16 +343,11 @@ var subtitle = chart.titles.create();
 /*subtitle.text = "(click to open)";*/
 
 var title = chart.titles.create();
-/*title.text = "Most Popular Tags @ StackOverflow";*/
+/* title.text = "Most Popular Tags @ StackOverflow"; */
 title.fontSize = 20;
 title.fontWeight = "800";
 
-}); // end am4core.ready()
 </script>
-
-<!-- HTML -->
-<div id="chartdiv"></div>
-			
 			
 			<!--
             <div class="content content--mlarge skill-set__flex">
@@ -640,9 +489,10 @@ title.fontWeight = "800";
           </div>
 		  -->
         </section>
-		
-        <footer class="footer"><a href="mailto:tharunkommaddi@gmail.com">tharunkommaddi@gmail.com<!--</a><a href="https://www.wantedly.com/users/48483598" target="_balnk">Wantedly</a>-->
+		<!--
+        <footer class="footer"><a href="mailto:tharunkommaddi@gmail.com">tharunkommaddi@gmail.com</a><a href="https://www.wantedly.com/users/48483598" target="_balnk">Wantedly</a>
 		</footer>
+		-->
       </div>
     </main>
     <script src="../ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
