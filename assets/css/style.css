@@ -1227,7 +1227,7 @@ section.auto {
 section .circle {
   width: 40px;
   height: 40px;
-  border: 12px solid #9b0000;
+  border: 12px solid #3A9469;
   border-radius: 40%;
   z-index: 0;
 }
@@ -1247,7 +1247,7 @@ section .circle.lg {
 section .circle.md {
   width: 50px;
   height: 50px;
-  border: 14px solid #3A9469;
+  border: 14px solid #7b0000;
 }
 
 @media screen and (min-width: 1351px) and (max-width: 1450px) {
